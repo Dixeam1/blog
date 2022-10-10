@@ -78,11 +78,12 @@ class BlogController extends Controller
     public function update(Request $request, blog $blog, $id)
     {
         $res =blog::find($request->id);
-       $res->name=$request->input('name');
-       $res->discription=$request->input('discription');
-       $res->save();
-       $request->session()->flash('msg', 'Data Successfully updated!');
-       return redirect("home");    }
+        $res->name=$request->input('name');
+        $res->discription=$request->input('discription');
+        $res->save();
+        $request->session()->flash('msg', 'Data Successfully updated!');
+        return redirect("home");    
+    }
 
     /**
      * Remove the specified resource from storage.
